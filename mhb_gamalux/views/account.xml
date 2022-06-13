@@ -8,7 +8,22 @@
             <xpath expr="//field[@name='invoice_payments_widget']" position="after">
                 <field name="paid_by_journal" attrs="{'invisible': [('payment_state','in',['not_paid','reversed','invoicing_legacy'])]}"/>
             </xpath>
+             <xpath expr="//field[@name='payment_reference']" position="after">
+                <field name="sale_tax_no" string = 'Sale Tax Invoice Number' />
+            </xpath>
 
+        </field>
+    </record>
+         <record id="view_customer_form" model="ir.ui.view">
+        <field name="name">view.customer.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="strn" string="STRN"/>
+                <field name="cnic" string="CNIC"/>
+                <field name="ntn" string="NTN number"/>
+            </xpath>
         </field>
     </record>
 
