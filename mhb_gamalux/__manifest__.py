@@ -4,10 +4,12 @@
     'category': 'Gamalux Customization',
     #     'sequence': 57,
     # 'summary': 'Ticket Extension',
-    'depends': ['account'],
+    'depends': ['base','account'],
     'description': """Gamalux Customization""",
     'data': [
-          'views/account.xml'
+          'views/account.xml',
+          'report/invoice_report.xml'
+
     ],
     'qweb': [],
     'demo': [],

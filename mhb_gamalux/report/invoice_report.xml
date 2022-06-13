@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <template id="report_invoice_inherit" inherit_id="account.report_invoice_document">
+<!--       <xpath expr="(//table[@class='table table-condensed'])[1]//thead/tr" position="replace">-->
+<!--              <th class="text-right">Analytic Account</th>-->
+<!--      </xpath>-->
+<!--        <xpath expr="/t[t-name ='account.report_invoice_with_payments']">-->
+<!--            <th class="text-right">Analytic Account</th>-->
+
+<!--        </xpath>-->
+<!--         <xpath expr="/div[@class='col-auto col-3 mw-100 mb-2']" position="after">-->
+
+<!--         </xpath>-->
+        <xpath expr="t/t/address" position="after">
+            <t t-if-="o.partner_id.strn">
+                 <t t-esc="o.partner_id.strn"/>
+            </t>
+            <br/>
+            <t t-if-="o.partner_id.cnic">
+                 <t t-esc="o.partner_id.cnic"/>
+            </t>
+
+        </xpath>
+    </template>
+
+
+</data>
+</odoo>
