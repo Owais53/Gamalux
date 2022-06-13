@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="view_account_move_form_pay_journal" model="ir.ui.view">
+        <field name="name">view.account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_payments_widget']" position="after">
+                <field name="paid_by_journal" attrs="{'invisible': [('payment_state','in',['not_paid','reversed','invoicing_legacy'])]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    </data>
+</odoo>
